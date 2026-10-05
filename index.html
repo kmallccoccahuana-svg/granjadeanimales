@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Control de Alimentación en Granjas</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🐷 APP DE CONTROL DE ALIMENTACIÓN</h1>
+        <p>Control de consumo y conversión alimenticia en granjas</p>
+    </header>
+
+    <div class="contenedor">
+
+        <!-- FORMULARIO -->
+        <section class="formulario">
+
+            <h2>Registrar alimentación diaria</h2>
+
+            <label>Tipo de animal</label>
+
+            <select id="animal">
+                <option value="">Seleccione un animal</option>
+                <option value="Aves">Aves</option>
+                <option value="Porcinos">Porcinos</option>
+                <option value="Cuyes">Cuyes</option>
+            </select>
+
+
+            <label>Cantidad de animales</label>
+
+            <input
+                type="number"
+                id="cantidad"
+                placeholder="Ejemplo: 50"
+                min="1"
+            >
+
+
+            <label>Fecha</label>
+
+            <input
+                type="date"
+                id="fecha"
+            >
+
+
+            <label>Alimento balanceado</label>
+
+            <input
+                type="text"
+                id="alimento"
+                placeholder="Ejemplo: Alimento de crecimiento"
+            >
+
+
+            <label>Consumo de alimento (kg)</label>
+
+            <input
+                type="number"
+                id="consumo"
+                placeholder="Ejemplo: 25"
+                min="0"
+                step="0.01"
+            >
+
+
+            <label>Peso inicial total (kg)</label>
+
+            <input
+                type="number"
+                id="pesoInicial"
+                placeholder="Ejemplo: 100"
+                min="0"
+                step="0.01"
+            >
+
+
+            <label>Peso final total (kg)</label>
+
+            <input
+                type="number"
+                id="pesoFinal"
+                placeholder="Ejemplo: 120"
+                min="0"
+                step="0.01"
+            >
+
+
+            <button onclick="calcular()">
+                CALCULAR
+            </button>
+
+            <button class="limpiar" onclick="limpiar()">
+                LIMPIAR
+            </button>
+
+        </section>
+
+
+        <!-- RESULTADOS -->
+
+        <section class="resultados">
+
+            <h2>Resultados</h2>
+
+            <div class="tarjetas">
+
+                <div class="tarjeta">
+                    <h3>Ganancia de peso</h3>
+                    <p id="ganancia">0 kg</p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Conversión alimenticia</h3>
+                    <p id="conversion">0</p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Consumo por animal</h3>
+                    <p id="consumoAnimal">0 kg</p>
+                </div>
+
+                <div class="tarjeta">
+                    <h3>Ganancia por animal</h3>
+                    <p id="gananciaAnimal">0 kg</p>
+                </div>
+
+            </div>
+
+            <div id="mensaje"></div>
+
+        </section>
+
+
+        <!-- TABLA -->
+
+        <section class="tabla">
+
+            <h2>Registro diario</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Animal</th>
+                        <th>Cantidad</th>
+                        <th>Alimento</th>
+                        <th>Consumo</th>
+                        <th>Ganancia</th>
+                        <th>Conversión</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="tablaDatos">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+
+    <footer>
+
+        <p>
+            Proyecto de Control de Alimentación y Conversión Alimenticia
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
